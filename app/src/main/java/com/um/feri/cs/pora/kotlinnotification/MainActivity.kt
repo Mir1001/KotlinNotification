@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
                 this,
                 getNotificationUniqueID(),
                 myTimeIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE
             )
 
 
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity() {
                 this,
                 getNotificationUniqueID(),
                 myTimeIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE
             )
         val inYes = Intent(this, MainActivity::class.java)
         inYes.putExtra(VOTING_KEY, VOTING_ANSW_YES)
@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
                 this,
                 getNotificationUniqueID(),
                 inYes,
-                PendingIntent.FLAG_UPDATE_CURRENT
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE
             )
         val inNo = Intent(this, MainActivity::class.java)
         inNo.putExtra(VOTING_KEY, VOTING_ANSW_NO)
@@ -148,7 +148,7 @@ class MainActivity : AppCompatActivity() {
                 this,
                 getNotificationUniqueID(),
                 inNo,
-                PendingIntent.FLAG_UPDATE_CURRENT
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE
             )
 
         var builder = NotificationCompat.Builder(this, CHANNEL_ID)
